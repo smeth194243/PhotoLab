@@ -40,8 +40,23 @@ public class PictureTester
 	  Picture bike = new Picture("blueMotorcycle.jpg");
 	  bike.explore();
 	  bike.mirrorHorizontal();
+  }
+  
+  public static void testMirrorDiagonal()
+  {
+	  Picture bike = new Picture("blueMotorcycle.jpg");
+	  Picture koala = new Picture("koala.jpg");
+	  bike.explore();
+	  koala.explore();
+	  bike.mirrorDiagonal();
+	  koala.mirrorDiagonalUphill();
+	  bike.mirrorDiagonalUphill();
+	  bike.explore();
+	  koala.write("fancyMirror.jpg");
 	  bike.explore();
   }
+  
+ 
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
@@ -84,7 +99,8 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
-    testMirrorHorizontal();
+    //testMirrorHorizontal();
+	  testMirrorDiagonal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
