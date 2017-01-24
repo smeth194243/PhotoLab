@@ -61,11 +61,21 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
-    temple.explore();
-    temple.mirrorTemple();
-    temple.explore();
+    Picture birdie = new Picture("temple.jpg");
+    birdie.explore();
+    birdie.mirrorTemple();
+    birdie.explore();
   }
+  
+  
+  public static void testMirrorSeagull()
+  {
+    Picture birdie = new Picture("seagull.jpg");
+    birdie.explore();
+    birdie.mirrorSeagull();
+    birdie.explore();
+  }
+  
   
   /** Method to test the collage method */
   public static void testCollage()
@@ -78,9 +88,16 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
-    swan.explore();
+    Picture glasses = new Picture("glasses.jpg");
+    glasses.edgeDetection(10);
+    glasses.explore();
+  }
+  
+  public static void testEdgeDetective()
+  {
+    Picture glasses = new Picture("glasses.jpg");
+    glasses.edgeDetective(10);
+    glasses.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -100,14 +117,16 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
-	  testMirrorDiagonal();
+	//  testMirrorDiagonal();
     //testMirrorTemple();
+	//  testMirrorSeagull();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
+    testEdgeDetective();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
