@@ -13,6 +13,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  * the Picture class.  
  * 
  * @author Seth Morris
+ * TESTING TESTING DID I SET UP ECLIPSE AND GITHUB RIGHT ON MY LAPTOP
  */
 public class Picture extends SimplePicture 
 {
