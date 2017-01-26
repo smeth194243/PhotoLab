@@ -97,7 +97,7 @@ public class PictureTester
     canvas.explore();
   }
   
-  public static void testCopy();
+  public static void testCopyCat();
   {
 	  
   }
@@ -147,8 +147,8 @@ public class PictureTester
     //                           testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
-    //testCopy();
+    //                           testCollage();
+    testCopy();
     //testEdgeDetection();
     //                           testEdgeDetective();
     //testEdgeDetection2();
