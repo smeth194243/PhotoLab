@@ -246,6 +246,22 @@ public class Picture extends SimplePicture
 	    }
 	  }
   
+  public void mirrorArms()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel bottomPixel = null;
+	  Pixel topPixel = null;
+	  
+	  for(int row = 170; row < 190; row++)
+	  {
+		  for(int col = 100; col < 300; col++)
+		  {
+			  topPixel = pixels[row][col];
+			  bottomPixel = pixels[row + 20][col];
+			  bottomPixel.setColor(topPixel.getColor());
+		  }
+	  }
+  }
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -280,8 +296,8 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("chrome.jpg");
+    Picture flower2 = new Picture("snapchat.png");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
     this.copy(flower1,200,0);
@@ -354,14 +370,48 @@ public class Picture extends SimplePicture
         }    
      }
   }
+  
+  public void fullRandom()
+  {
+	  Pixel [] [] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int) (Math.random()* 256);
+			  int green = (int) (Math.random()* 256);
+			  int blue = (int) (Math.random()* 256);
+			  
+			  currentPixel.setColor(new Color(red, green, blue));
+		  }
+	  }
+  }
+  
+  public void fullRandomGreen()
+  {
+	  Pixel [] [] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  
+			  int green = (int) (Math.random()* 256);
+			 
+			  
+			  currentPixel.setColor(new Color(currentPixel.getRed(), green, currentPixel.getBlue()));
+		  }
+	  }
+  }
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("temple.jpg");
     beach.explore();
     beach.zeroBlue();
+    beach.fullRandom();
+    beach.fullRandomGreen();
     beach.explore();
   }
   
