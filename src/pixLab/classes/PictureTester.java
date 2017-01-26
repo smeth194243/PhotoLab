@@ -95,8 +95,16 @@ public class PictureTester
   
   public static void testEdgeDetective()
   {
+	Picture carmen = new Picture("carmen.jpg");
     Picture glasses = new Picture("glasses.jpg");
+    
+    carmen.explore();
+    carmen.edgeDetective(10);
+    carmen.explore();
+    
+    glasses.explore();
     glasses.edgeDetective(10);
+    glasses.edgeDetective(20);
     glasses.explore();
   }
   
@@ -125,7 +133,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     testEdgeDetective();
     //testEdgeDetection2();
     //testChromakey();
