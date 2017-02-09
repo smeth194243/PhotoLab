@@ -1,11 +1,6 @@
 package pixLab.classes;
-import java.awt.*;
-import java.awt.font.*;
-import java.awt.geom.*;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.text.*;
-import java.util.*;
-import java.util.List; // resolves problem with java.awt.List and java.util.List
 
 /**
  * A class that represents a picture.  This class inherits from 
@@ -98,6 +93,30 @@ public class Picture extends SimplePicture
         pixelObj.setBlue(0);
       }
     }
+  }
+  
+  public void valentinesMeme()
+  {
+	  //this.addMessage("*tells valentines date that they are a programmer*", 10, 112);
+
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length;col++)
+		  {
+			  int r = pixels[row][col].getRed();
+			  int g = pixels[row][col].getGreen();
+			  int b = pixels[row][col].getBlue();
+			  if(r > 140 && g > 140 && b > 140)
+			  {
+				  pixels[row][col].setRed(255);
+				  pixels[row][col].setGreen(0);
+				  pixels[row][col].setBlue(0);
+				  int value = pixels[row][col].getBlue();
+				  int test = value * 5;
+			  }
+		  }
+	  }
   }
   
   /** Method that mirrors the picture around a 
@@ -302,14 +321,14 @@ public class Picture extends SimplePicture
   {
     Picture flower1 = new Picture("chrome.jpg");
     Picture flower2 = new Picture("snapchat.png");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
-    Picture flowerNoBlue = new Picture(flower2);
-    flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+//    this.copy(flower1,0,0);
+//    this.copy(flower2,100,0);
+//    this.copy(flower1,200,0);
+//    Picture flowerNoBlue = new Picture(flower2);
+//    flowerNoBlue.zeroBlue();
+//    this.copy(flowerNoBlue,300,0);
+//    this.copy(flower1,400,0);
+//    this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
   }

@@ -18,6 +18,16 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testValentinesMeme()
+  {
+	  Picture meme = new Picture("beach.jpg");
+	  meme.valentinesMeme();
+	  meme.addMessage("TRIES TO MAKE VALENTINES MEME", 35, 68);
+	  meme.addMessage("EVEN MY COMPUTER REJECTS ME", 55, 368);
+	  meme.write("MyMeme");
+	  meme.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -97,7 +107,7 @@ public class PictureTester
     canvas.explore();
   }
   
-  public static void testCopyCat();
+  public static void testCopyCat()
   {
 	  
   }
@@ -148,9 +158,10 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
     //                           testCollage();
-    testCopy();
+    //testCopy();
     //testEdgeDetection();
     //                           testEdgeDetective();
+	  testValentinesMeme();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
