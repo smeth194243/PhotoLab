@@ -425,6 +425,39 @@ public class Picture extends SimplePicture
 		  }
 	  }
   }
+  
+  public void glitch3d()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  Picture bike = new Picture("blueMotorcycle.jpg");
+	  
+	  for (int index = 0; index < (int) (Math.random() * 25); index++)
+	  {
+		  this.copy(bike, (int) (Math.random() *480), (int) (Math.random() * 640), (int)(Math.random() *480), (int)(Math.random() *640));
+		  this.zeroBlue();
+		  this.fullRandom();
+		  
+		  for(int index2 = 0; index2 < (int) (Math.random()* 25); index2++)
+		  {
+			  this.copy(bike, (int) (Math.random() *480), (int) (Math.random() * 640), (int)(Math.random() *480), (int)(Math.random() *640));
+			  this.zeroGreen();
+			  this.fullRandomGreen();
+		  }
+	  }
+  }
+  
+  public void zeroGreen()
+  {	  
+	    Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	        pixelObj.setGreen(0);
+	      }
+	    }
+	  
+  }
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
@@ -436,6 +469,11 @@ public class Picture extends SimplePicture
     beach.fullRandom();
     beach.fullRandomGreen();
     beach.explore();
+    
+    Picture bike = new Picture("blueMotorcycle.jpg");
+    bike.explore();
+    bike.glitch3d();
+    bike.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
