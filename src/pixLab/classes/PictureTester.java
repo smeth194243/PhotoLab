@@ -161,7 +161,7 @@ public class PictureTester
     //testCopy();
     //testEdgeDetection();
     //                           testEdgeDetective();
-	  testValentinesMeme();
+	 // testValentinesMeme();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
