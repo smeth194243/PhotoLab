@@ -473,6 +473,7 @@ public class Picture extends SimplePicture
     Picture bike = new Picture("blueMotorcycle.jpg");
     bike.explore();
     bike.glitch3d();
+    bike.write("GlitchArt-Seth Morris.jpg");
     bike.explore();
   }
   
