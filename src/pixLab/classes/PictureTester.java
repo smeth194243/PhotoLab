@@ -134,6 +134,16 @@ public class PictureTester
     glasses.explore();
   }
   
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("blank.png");
+	  source.explore();
+	  Picture hidden = new Picture("hide.png");
+	  source.encode(hidden);
+	  source.explore();
+	  hidden.explore();
+	  source.decode();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -169,5 +179,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  testSteganography();
   }
 }
