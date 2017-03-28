@@ -488,6 +488,11 @@ public class Picture extends SimplePicture
 	  this.explore();
   }
   
+  public void crop(int topLeftX, int topLeftY, int width, int height) 
+  {
+		this.setBufferedImage(this.getBufferedImage().getSubimage(topLeftX, topLeftY, width, height));
+  }
+  
   public void decode()
   {
 	  Pixel[][] decoded = this.getPixels2D();
@@ -507,6 +512,29 @@ public class Picture extends SimplePicture
 	  }
 	  this.explore();
   }
+  public void chromaKey(Color colorToClip, Picture source, int variance) 
+  {
+		Pixel[][] sourcePixels = source.getPixels2D();
+		Pixel[][] pixels = this.getPixels2D();
+
+		for (int row = 0; row < sourcePixels.length; row++) 
+		{
+			for (int col = 0; col < sourcePixels[0].length; col++)
+			{
+				Pixel pixel = sourcePixels[row][col];
+				int r = pixel.getRed();
+				int g = pixel.getGreen();
+				int b = pixel.getBlue();
+				
+				if(!(r < colorToClip.getRed() + variance && r > colorToClip.getRed() - variance &&
+						g < colorToClip.getGreen() + variance && g > colorToClip.getGreen() - variance &&
+						b < colorToClip.getBlue() + variance && b > colorToClip.getBlue() - variance))
+				{
+					pixels[row][col].setColor(pixel.getColor());
+				}
+			}
+		}
+	}
   /* Main method for testing - each class in Java can have a main 
    * method 
    */

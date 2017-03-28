@@ -17,7 +17,10 @@ import java.awt.geom.*;
  */
 public class SimplePicture implements DigitalPicture
 {
-  
+	public void setBufferedImage(BufferedImage image)
+	{
+		 this.bufferedImage = image;
+	}
   /////////////////////// Fields /////////////////////////
   
   /**
